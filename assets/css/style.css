@@ -25,7 +25,7 @@ body {
   font-size: 48px;
   margin-bottom: 20px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05rem;
   /* min-width: 600px; */
 }
 
@@ -65,7 +65,7 @@ h3 {
 }
 
 .catch-text {
-  width: 80%;
+  width: 85vw;
   max-width: 600px;
   margin: 0 auto 50px;
   font-size: 18px;
@@ -1539,7 +1539,7 @@ body.no-scroll .header-wrapper {
   }
 
   .catch-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 40px;
   }
 
