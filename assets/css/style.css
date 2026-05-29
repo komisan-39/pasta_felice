@@ -1,0 +1,1888 @@
+/* ------------------------------
+   Reset（余計な余白を消す）
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------
+   基本設定
+------------------------------ */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+  background-color: #f8f5f0;
+  line-height: 1.8;
+  /* 1.6から1.8へ：行間を少し広げて読みやすく */
+  letter-spacing: 0.05em;
+  /* ★追加：文字の間隔をわずかに広げて上品に */
+}
+
+/* ついでに、キャッチコピーのタイトルも少し文字間を広げます */
+.catch-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  /* min-width: 600px; */
+}
+
+/* 見出しフォント */
+h1,
+h2,
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ボタン共通 */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #c0392b;
+  /* トマトレッド */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.sp {
+  display: none;
+}
+
+/* ------------------------------
+   キャッチコピー
+------------------------------ */
+.catch {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.catch-text {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-size: 18px;
+  text-align: center;
+  color: #555;
+}
+
+/* ------------------------------
+   ニュース（NEWS）
+------------------------------ */
+#news .section-title {
+  font-size: 2.4rem;
+}
+
+.news-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.news-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  border-top: 1px solid #ddd;
+}
+
+.news-item {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  gap: 30px;
+}
+
+.news-date {
+  color: #888;
+  width: 100px;
+}
+
+/* カードの並び方の調整 */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  /* カード同士の間隔を少し広めに */
+  flex-wrap: wrap;
+  /* スマホでは縦並びにするため */
+}
+
+/* ------------------------------
+   お店紹介（About）
+------------------------------ */
+
+.about-text {
+  width: 50%;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ------------------------------
+   おすすめメニュー（menu）
+------------------------------ */
+.menu {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.menu h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.card {
+  width: 30%;
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+
+  /* --- ここから修正 --- */
+  display: flex;
+  /* 中身を並べるモードに */
+  flex-direction: column;
+  /* 縦に並べる */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* おすすめメニューの画像エリア */
+.card-img {
+  width: 100%;
+  height: 200px;
+  /* 高さを少し調整 */
+  background-size: cover;
+  /* 画像を隙間なく表示する */
+  background-position: center;
+  /* 画像の真ん中を表示する */
+  border-radius: 6px;
+  margin-bottom: 16px;
+  background-color: #ddd;
+  flex-shrink: 0;
+  /* 画像が縮まないように固定 */
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  flex-grow: 0;
+  /* 商品名は上詰め */
+}
+
+.card-desc {
+  font-size: 16px;
+  color: #555;
+  flex-grow: 1;
+  /* 余白を自動的に埋める */
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.card-price {
+  font-weight: bold;
+  color: #c0392b;
+}
+
+/* ------------------------------
+   フッター
+------------------------------ */
+/* --- フッターエリア全体の調整 --- */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 60px 20px 30px;
+  /* 上にゆとりを持たせ、下を少し締める */
+  margin-top: 80px;
+  text-align: center;
+}
+
+.sns-area {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sns-area .sns-icon img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20%;
+  background: rgba(255, 255, 255, 0.9);
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+/* ホバー時のふわりアニメーション */
+.sns-icon img:hover {
+  transform: translateY(-4px) scale(1.08);
+  /* ふわっと浮く */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  /* 影で立体感 */
+  opacity: 1;
+}
+
+/* フッターのリンク色を白に統一 */
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  /* 各ブロック（SNS、情報、マップ）の間の隙間 */
+}
+
+/* --- お店情報のテキスト調整 --- */
+.footer-info {
+  line-height: 1.8;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.hours {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  /* 境界線を入れて見やすく */
+}
+
+/* --- マップの表示調整（吹き出し隠し込み） --- */
+
+.map-small iframe {
+  margin-top: -120px;
+  height: calc(100% + 120px);
+  border: none;
+}
+
+.copy {
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* --- Instagram（文字入りボタン） --- */
+.insta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 30px;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.insta-link i {
+  font-size: 1.5em;
+}
+
+.insta-link:hover {
+  background-color: #fff;
+  color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------
+   スライドショー（新）
+------------------------------ */
+.main-visual {
+  width: 98%;
+  max-width: 1600px;
+  height: 80vh;
+  margin: 0 auto;
+  /* ← 中央寄せ */
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f5f0;
+}
+
+.slide-message {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+  z-index: 20;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.3;
+  opacity: 0;
+}
+
+/* クラスが付与された時だけ動くアニメーション */
+.slide-message.show-anim {
+  animation:
+    fadeInMessage 1.8s ease-out forwards,
+    fadeOutMessage 5s ease-in-out 4s forwards;
+}
+
+@keyframes fadeInMessage {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutMessage {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* style.css の該当箇所を確認・修正 */
+/* style.css スライドショー部分 */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 0;
+  transform: scale(1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: center center;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+  /* activeになった瞬間アニメーション開始 */
+  animation: zoom-pro 7s ease-out forwards;
+}
+
+.slide.last-active {
+  opacity: 0;
+  z-index: 1;
+  /* activeの下に配置 */
+  transform: scale(1.08);
+}
+
+@keyframes zoom-pro {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+/* 画像の割り当て */
+/* 外観（1枚目） */
+.slide1 {
+  background-image: url('../images/exterior.webp');
+  transform: scale(1);
+  /* 👈 1 に変更 */
+  transform-origin: center center;
+}
+
+/* トマトパスタ（2枚目） */
+.slide3 {
+  background-image: url('../images/pasta1.webp');
+  transform: scale(1);
+  /* 👈 1 に変更 */
+  transform-origin: center center;
+  background-position: 95% 25%;
+}
+
+/* 内観（3枚目） */
+.slide2 {
+  background-image: url('../images/interior.webp');
+  transform: scale(1);
+  /* 👈 1 に変更 */
+  transform-origin: center center;
+}
+
+/* ピザ（4枚目） */
+.slide4 {
+  background-image: url('../images/pizza4.webp');
+  transform: scale(1);
+  /* 👈 1 に変更 */
+  transform-origin: center center;
+  background-position: 95% 35%;
+}
+
+/* ズームアニメーション */
+@keyframes zoom-pro {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+/* スライド下のドット */
+.indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* 薄い白 */
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.3);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  font-size: 40px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* ▼▼ スライドの白残り対策：オーバーレイ ▼▼ */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0) 60%);
+}
+
+.slide3 .overlay,
+.slide4 .overlay {
+  background: none;
+}
+
+.map-small iframe {
+  margin-top: -120px;
+  /* 地図を上にずらす（数字を大きくするほど上が隠れます） */
+  height: calc(100% + 120px);
+  /* ずらした分だけ高さを足して下まで埋める */
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #333;
+  text-decoration: none;
+}
+
+header .logo img {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.footer-logo img {
+  width: 200px;
+  margin-top: 7px;
+}
+
+/* ------------------------------
+   スプラッシュ（全面ロゴ表示）
+------------------------------ */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #fff;
+  /* 背景色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ↓ここを追加・変更してください */
+  transition: opacity 1.5s ease-out;
+  opacity: 1;
+}
+
+/* style.css の該当箇所を書き換え */
+#splash.hide {
+  opacity: 0;
+  /* 0.8s から 2.0s にして、じわーっと消えるように */
+  transition: opacity 2s ease-in-out;
+  pointer-events: none;
+}
+
+.splash-logo-img {
+  width: 260px;
+  height: auto;
+  opacity: 0;
+  /* アニメーションの最後に「0.1s」を追加して、ほんの一瞬だけ開始を遅らせます */
+  animation: splashZoom 4.2s ease 0.1s forwards;
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+@keyframes splashZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    /* ← 少し小さく開始 */
+  }
+
+  55% {
+    opacity: 1;
+    transform: scale(1.15);
+    /* ← ふわっと大きく */
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    /* ← ゆっくり戻る */
+  }
+}
+
+/* フェードアウト時の滑らかさUP */
+#splash.hide,
+.white-cover.hide {
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  /* ← 0.8s → 1.4s にして自然に */
+  pointer-events: none;
+}
+
+/* 白カバーも余韻を持たせる */
+.white-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 2000;
+  opacity: 0;
+  /* ← 初期状態は透明にする */
+  visibility: hidden;
+  /* ← クリックも無効にする */
+  transition: opacity 1.6s ease;
+}
+
+.white-cover.hide {
+  opacity: 0;
+}
+
+/* アクセス地図の幅調整 */
+.access .map-large {
+  width: 80%;
+  margin: 0 auto;
+  /* 中央寄せ */
+}
+
+.access .map-large iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+/* お問合せセクション */
+.contact {
+  padding: 80px 0;
+  background: #f9f5ef;
+  /* 薄いベージュで全体と統一 */
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.contact-lead {
+  font-size: 1rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* フォーム本体（カード型） */
+.contact-form {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* 送信ボタン（トマトレッド） */
+.contact-btn {
+  width: 100%;
+  padding: 14px;
+  background: #d64545;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #b73838;
+}
+
+/* ============================
+   ヘッダー（Header）
+============================ */
+header {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  width: 100%;
+  /* ← 画面いっぱいに戻す */
+  max-width: none;
+  /* ← これを追加して幅制限を解除 */
+  /* margin-bottom: 30px; */
+}
+
+nav ul {
+  display: flex;
+  /* ← これが消えて崩れた */
+  gap: 40px;
+  /* ← メニュー間隔 */
+  list-style: none;
+  /* 黒丸を消す */
+}
+
+nav ul li a {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  /* ← 読みやすさUP */
+  font-weight: 700;
+  /* ← Playfairは700が一番見やすい */
+  letter-spacing: 0.05em;
+  /* ← 少し詰めて視認性UP */
+  color: #222;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #c0392b;
+  opacity: 0.8;
+}
+
+#news {
+  scroll-margin-top: 70px;
+}
+
+#access {
+  scroll-margin-top: 70px;
+  padding: 80px 0;
+}
+
+/* MENU と CONTACT は少し上に寄せる */
+#menu {
+  scroll-margin-top: 70px;
+}
+
+#contact {
+  scroll-margin-top: 70px;
+}
+
+/* ============================
+   セクション共通タイトル
+============================ */
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  margin-bottom: 60px;
+  /* ← ここだけ変更 */
+  letter-spacing: 0.05em;
+  color: #333;
+  margin-bottom: 40px;
+  /* ← 60px → 40px に戻す */
+}
+
+#about .section-title {
+  margin-bottom: 80px;
+  /* ← 他より少しだけ詰める */
+  display: flex;
+  align-items: flex-end;
+  /* ← 下揃えに変更 */
+  justify-content: center;
+  gap: 14px;
+  font-size: 2rem;
+}
+
+#about .section-title img {
+  width: 200px;
+  /* ← ロゴの大きさ（調整可） */
+}
+
+#about .section-title span {
+  position: relative;
+  top: 14px;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+/* ===== セクションごとのタイトル位置調整 ===== */
+
+#about .section-title {
+  margin-top: 0;
+}
+
+#menu .section-title {
+  margin-top: 0;
+}
+
+#access .section-title {
+  margin-top: 0;
+}
+
+#contact .section-title {
+  margin-top: 0;
+}
+
+/* 商品名（全ページ共通） */
+.card h3,
+.menu-card h3 {
+  letter-spacing: 0.01em;
+  /* ← 文字間を少し狭く */
+  font-weight: 800;
+  /* ← 少し太字にして視認性UP */
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-row .about-img {
+  width: 50%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.about-row .about-text {
+  width: 50%;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+
+#about {
+  scroll-margin-top: 70px;
+  padding: 80px 0;
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: inline-block;
+  padding: 0px 18px 4px;
+  background: rgba(255, 255, 255, 0.9);
+  /* ← 透明度0.9 */
+  border-radius: 8px;
+}
+
+.footer-logo img {
+  display: block;
+}
+
+.item-modal {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.item-modal.show {
+  opacity: 1;
+}
+
+.item-modal-content {
+  transform: scale(0.92);
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.item-modal.show .item-modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ==========================================
+   🛠️ 追加：商品モーダルのアニメーションとスクロール制御
+========================================== */
+
+/* 1. 背景（黒いマスク）の初期設定とアニメーション */
+.item-modal {
+  display: none;
+  /* 初期状態は非表示（JSで block に切り替えます） */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 背景を少し暗く */
+  z-index: 10000;
+  /* スプラッシュ（9999）より前面に表示 */
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* JSで .show がついたとき、背景をふわっと表示 */
+.item-modal.show {
+  display: flex;
+  /* 中央寄せを有効に */
+  opacity: 1;
+}
+
+/* 2. モーダル中身（白枠のカード）のアニメーション */
+.item-modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  /* 👈 ここを 600px に修正しました！ */
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  /* 中身が長くなったらカード内だけでスクロール */
+  position: relative;
+
+  /* 最初は少し小さく、透明にしておく */
+  transform: scale(0.9);
+  opacity: 0;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* 背景が表示されたら、中身をポンッと実寸大に浮かび上がらせる */
+.item-modal.show .item-modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* --- モーダル関連：style.css からは装飾を消し、仕組みだけにする --- */
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  padding-right: calc(100vw - 100%) !important;
+}
+
+/* 💡 おすすめメニューへジャンプした時、ヘッダーの下にピタッと収める */
+#menu {
+  scroll-margin-top: 70px;
+  /* 👈 ヘッダーの高さ（約80px〜90px）に合わせて自動で手前で止まる命令 */
+}
+
+/* ==========================================================
+   統一モーダル設定（ここから下を一番最後に貼り付け）
+========================================================== */
+
+/* 1. モーダルの全体背景（黒の半透明） */
+.item-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.item-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 2. モーダルの中身（黒い座布団デザイン） */
+.item-modal-content {
+  background: #222;
+  color: #fff !important;
+  width: 92%;
+  max-width: 680px;
+  padding: 30px 42px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  max-height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: scale(0.92);
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.item-modal.show .item-modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* 3. モーダル内の各パーツ */
+.item-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.item-modal-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.item-modal-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.item-modal-price {
+  font-size: 20px;
+  color: #c49a6c;
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+.item-modal-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ddd !important;
+  text-align: left;
+}
+
+/* 4. スクロール固定設定 */
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  padding-right: calc(100vw - 100%) !important;
+}
+
+body.no-scroll .header-wrapper {
+  padding-right: calc(100vw - 100%) !important;
+}
+
+/* 2回目以降のちらつき防止用クラス */
+.is-hidden {
+  display: none !important;
+}
+
+/* アクセス情報の文字設定 */
+.access-info {
+  width: 80%;
+  margin: 30px auto 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  letter-spacing: 0.02em;
+}
+
+/* ★ おすすめメニューと同じカードデザイン */
+.card-style {
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.access-info p {
+  margin-bottom: 6px;
+}
+
+/* ▼▼ スクロールでふわっと表示 ▼▼ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.news,
+.about,
+.menu,
+.access,
+.contact {
+  padding-top: 80px;
+  /* 全セクション統一 */
+}
+
+/* -------------------------------------------
+----------------------------------------------
+-----------------------------------------------
+-----------------------------ここからスマホ設定--
+------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+------------ */
+
+/* --- 1. ハンバーガーボタンの基本設定 --- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #333;
+  position: absolute;
+  transition: 0.3s;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 10px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 20px;
+}
+
+/* メニューが開いている時、ハンバーガーアイコンを非表示にする */
+.hamburger.active {
+  opacity: 0;
+  pointer-events: none;
+  /* クリックも無効化する */
+  transition: opacity 0.3s ease;
+}
+
+/* ----------------------------------------------------ここからニュースに関するもの----------------------------------------------------*/
+
+/* ▼ NEWS リスト全体 */
+.news-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ▼ NEWS 1件分のカード */
+.news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  align-items: flex-start;
+  border-top: 1px solid #ddd;
+}
+
+.news-item:hover {
+  background: #f5f1ea;
+}
+
+/* ▼ 日付 */
+.news-date {
+  font-size: 1rem;
+  color: #333;
+  flex-shrink: 0;
+  order: 1;
+}
+
+/* ▼ NEW マーク（1週間以内） */
+.news-new {
+  display: inline-block;
+  background: #d64545;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+.news-more-btn:hover {
+  opacity: 0.85;
+}
+
+/* ▼ NEWS専用モーダル（外側） */
+.news-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ▼ NEWSモーダルを表示するための show クラス */
+.news-modal.show {
+  display: flex;
+}
+
+/* 閉じるボタン */
+.news-modal-content .item-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.news-modal-title {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.news-modal-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.news-modal-detail {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.news-modal-content {
+  background: #222;
+  color: #fff !important;
+  width: 92%;
+  max-width: 680px;
+  padding: 50px 80px;
+  border-radius: 20px;
+  text-align: left;
+  position: relative;
+  max-height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: scale(0.92);
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+  cursor: default;
+}
+
+.news-modal.show .news-modal-content {
+  transform: scale(1);
+  opacity: 1;
+  position: relative;
+}
+
+.news-modal-close {
+  cursor: pointer;
+}
+
+.news-modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 36px;
+  margin-top: 24px;
+  line-height: 28px;
+}
+
+.news-modal-date {
+  /* position: absolute;
+  top: 36px;
+  left: 80px; */
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #c49a6c;
+}
+
+.news-modal-detail {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #eee;
+  white-space: pre-line;
+}
+
+.news-modal-detail a {
+  color: #c49a6c;
+  /* ここを好きな色に変更できる。*/
+  text-decoration: underline;
+  /* 下線あり（好みで消せる） */
+}
+
+.news-modal-detail a:hover {
+  color: rgb(239, 226, 182);
+  /* ホバー時の色 */
+}
+
+/* ==========================================================================
+   ★ここに追加：ニュースモーダル内の日付とカテゴリーの横並び設定
+   ========================================================================== */
+.news-modal-meta {
+  /* display: flex; */
+  /* 日付とカテゴリーを横並びにする */
+  /* align-items: center; */
+  /* 上下の高さを中央で揃える */
+  /* margin-top: 24px; */
+  /* 👈 上の閉じるボタン等との隙間を確保 */
+  margin-bottom: 15px;
+  /* 下の本文との間に隙間を作る */
+}
+
+.news-modal-date {
+  /* position: static !important; */
+  /* 👈 元々かかっていた絶対配置(absolute)を解除して、横並びに直します */
+  font-size: 14px;
+  color: #c49a6c;
+  /* 高級感のあるゴールドベージュ（元のモーダル色と統一） */
+}
+
+.news-modal-category {
+  font-size: 14px;
+  color: #c49a6c;
+  /* 文字を白にして読みやすく */
+  margin-left: 12px;
+  /* 日付との間にあける隙間の幅 */
+  /* position: absolute;
+  top: 166px;
+  left: 150px; */
+}
+
+/* ==========================================================================
+   ★追加ここまで
+   ========================================================================== */
+
+/* ここに書いてOK（スマホ用より前でも後でもいい） */
+@media (min-width: 769px) {
+  a[href^='tel:'] {
+    pointer-events: none;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-close {
+    display: none;
+  }
+
+  .news-item {
+    display: flex;
+    flex-direction: row;
+    /* ← 横並び */
+    align-items: center;
+    gap: 5px;
+    /* ← インデント（余白） */
+  }
+
+  /* カテゴリとタイトルを横並びにする */
+  .news-category,
+  .news-title {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .news-date {
+    min-width: 110px;
+    /* ← 日付の幅を固定して整列 */
+  }
+
+  .news-category {
+    min-width: 110px;
+    /* ← カテゴリの幅も固定 */
+    color: #333;
+    font-weight: 400;
+    order: 2;
+    margin-right: 8px;
+    font-size: 1rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .news-title {
+    display: inline;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    /* ← タイトルは残り全部使う */
+    order: 3;
+    white-space: normal;
+  }
+
+  .news-new {
+    white-space: nowrap;
+    margin-left: 4px;
+  }
+}
+
+/* --- 2. スマホ用（768px以下）の決定版設定 --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 24px;
+    z-index: 100000;
+    /* ← 念のため前面に */
+  }
+
+  .sp {
+    display: inline;
+  }
+
+  /* レイアウト調整 */
+  body {
+    padding: 0 0 30px;
+    margin: 0;
+  }
+
+  header {
+    height: 80px;
+    padding: 0 16px;
+  }
+
+  header .logo img {
+    width: 180px;
+    margin-top: 20px;
+  }
+
+  /* （他のコンテンツの調整はそのまま維持されます） */
+  .main-visual {
+    height: 40vh;
+  }
+
+  .slide-message {
+    left: 53%;
+    transform: translateX(-50%);
+    /* ← これが中央寄せの本体 */
+    font-size: 2rem;
+    top: 37%;
+    width: 90%;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .catch {
+    padding: 70px 20px;
+  }
+
+  .catch-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .catch-text {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .news-section {
+    padding: 70px 18px;
+  }
+
+  .about-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-row.reverse {
+    flex-direction: column;
+  }
+
+  .about-row .about-img,
+  .about-row .about-text {
+    width: 100%;
+  }
+
+  .about-row .about-img {
+    height: 240px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card-desc {
+    font-size: 1rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .menu-card {
+    padding: 16px;
+  }
+
+  .menu-img {
+    height: 160px;
+  }
+
+  .access .map-large {
+    width: 95%;
+  }
+
+  .access-info {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .contact-form {
+    width: 90%;
+    padding: 24px;
+  }
+
+  .contact-lead {
+    text-align: center;
+    margin: 0 auto 40px;
+    width: 75%;
+  }
+
+  .site-footer {
+    padding: 40px 20px;
+  }
+
+  .footer-logo img {
+    width: 160px;
+  }
+
+  /* --- メニューのスライド設定 --- */
+  .nav-menu {
+    /* display: flex; */
+    position: fixed;
+    top: 0;
+    right: -80%;
+    width: 70vw;
+    height: 100vh;
+    background: #f8f5f0;
+    padding: 100px 20px;
+    z-index: 99999 !important;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    visibility: visible !important;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .nav-menu.show {
+    right: 0% !important;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-menu ul li a {
+    font-size: 20px;
+  }
+
+  .nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    font-weight: 600;
+    color: #f8f5f0;
+    border: 2px solid #333;
+    border-radius: 20%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    cursor: pointer;
+    z-index: 100000;
+  }
+
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    /* z-index: 9999; */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .slide {
+    background-position: center center !important;
+  }
+
+  #about .section-title img {
+    width: 13rem;
+  }
+
+  #about .section-title span {
+    font-size: 2rem;
+    letter-spacing: -0.1rem;
+    margin-left: -0.7rem;
+  }
+
+  #about .section-title {
+    margin-bottom: 50px;
+  }
+
+  .about-row .about-img {
+    width: 95%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    /* ← これ重要 */
+    border-radius: 8px;
+  }
+
+  .about-row .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ← これで比率にフィット */
+    object-position: center;
+  }
+
+  .about-text p {
+    width: 90%;
+    text-align: left;
+    letter-spacing: normal;
+    margin: 0 auto;
+  }
+
+  #about {
+    padding: 70px 0;
+  }
+
+  .menu {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .menu h2 {
+    font-size: 1.7rem;
+  }
+
+  .menu h3 {
+    font-size: 1.4rem;
+  }
+
+  #access {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  #contact {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  #contact h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* NEWS / MENU / ACCESS を少し小さく */
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  /* ABOUT はロゴと並ぶのでさらに小さく */
+  #about .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* CONTACT もフォームとのバランスで小さめ */
+  #contact .section-title,
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .site-footer {
+    margin-top: 50px;
+  }
+
+  .sns-area {
+    gap: 10px;
+  }
+
+  .sns-icon img:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  #about {
+    scroll-margin-top: 70px;
+  }
+
+  #access {
+    scroll-margin-top: 70px;
+  }
+
+  #contact {
+    scroll-margin-top: 70px;
+  }
+
+  .item-modal-image {
+    height: 25vh;
+  }
+
+  .item-modal-content {
+    max-height: 95vh;
+  }
+
+  .item-modal-title {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+
+  .item-modal-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ddd !important;
+    text-align: left;
+  }
+
+  .slide1 {
+    opacity: 0.1;
+  }
+
+  .btn:hover {
+    opacity: 1;
+  }
+
+  .news-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding-top: 8px;
+  }
+
+  /* 日付（左上） */
+  .news-date {
+    order: 1;
+    font-size: 1rem;
+  }
+
+  /* カテゴリ（右上） */
+  .news-category {
+    order: 2;
+    position: absolute;
+    top: 9.5px;
+    left: 115px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+  }
+
+  /* タイトル（2行目・左詰め） */
+  .news-title {
+    order: 3;
+    margin-top: 6px;
+    display: block;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .news-modal-content {
+    padding: 50px 36px;
+  }
+
+  .news-modal-date {
+    font-size: 1rem;
+    top: 30px;
+    left: 42px;
+  }
+}

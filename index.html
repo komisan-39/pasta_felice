@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pasta Felice</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Playfair+Display:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    if (sessionStorage.getItem('felice_visited')) {
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', () => {
+        document.documentElement.style.visibility = '';
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <script>
+    if (sessionStorage.getItem('felice_visited')) {
+      document.write(
+        '<style>#splash, .white-cover { display: none !important; }</style>',
+      );
+    }
+  </script>
+  <div id="splash">
+    <img src="./assets/images/logo3.png" alt="Logo" class="splash-logo-img" />
+  </div>
+
+  <div class="header-wrapper">
+    <header>
+      <a href="index.html" class="logo"><img src="./assets/images/logo3.png" alt="Pasta Felice" /></a>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-menu">
+        <span class="nav-close">×</span>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="index.html#news">NEWS</a></li>
+          <li><a href="index.html#about">ABOUT</a></li>
+          <li><a href="menu.html">MENU</a></li>
+          <li><a href="index.html#access">ACCESS</a></li>
+          <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="nav-overlay"></div>
+  </div>
+
+  <main>
+    <section class="main-visual" id="home-visual">
+      <div class="white-cover"></div>
+
+      <div class="slide slide1">
+        <div class="overlay"></div>
+      </div>
+      <div class="slide slide3">
+        <div class="overlay"></div>
+      </div>
+      <div class="slide slide2">
+        <div class="overlay"></div>
+      </div>
+      <div class="slide slide4">
+        <div class="overlay"></div>
+      </div>
+      <!-- ★★★ ここにメッセージを挿入 ★★★ -->
+      <div class="slide-message">
+        こころに残る、<br class="sp" />ひと皿の物語。
+      </div>
+      <div class="indicator">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <button class="arrow prev">‹</button>
+      <button class="arrow next">›</button>
+    </section>
+
+    <section class="catch">
+      <h1 class="catch-title">今日も、心ほどける<br class="sp" />一皿を。</h1>
+      <p class="catch-text">
+        木の温もりと<br class="sp" />トマトソースの香りが広がる、<br class="sp" />森のパスタ屋さん。
+      </p>
+      <a href="#menu" class="btn">おすすめメニューを見る</a>
+    </section>
+
+    <section id="news" class="news-section fade-in">
+      <div class="container">
+        <h2 class="section-title">NEWS</h2>
+
+        <!-- JSで中身を入れる箱 -->
+        <div id="news-list" class="news-list"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about fade-in">
+      <h2 class="section-title">
+        <img src="./assets/images/logo3.png" alt="Pasta Felice について" /><span>について</span>
+      </h2>
+
+      <div class="about-row">
+        <div class="about-img" style="background-image: url('assets/images/interior.webp')"></div>
+
+        <div class="about-text">
+          <p>
+            地元の人に愛される、温かみのあるパスタ屋です。自慢のトマトソースと木の温もりの店内で、ゆったりとした時間をお過ごしください。
+          </p>
+        </div>
+      </div>
+
+      <div class="about-row reverse">
+        <div class="about-img" style="background-image: url('assets/images/exterior.webp')"></div>
+
+        <div class="about-text">
+          <p>
+            季節の風を感じながら楽しめるテラス席。自然光と緑に囲まれた、特別なひとときをお過ごしください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu fade-in">
+      <h2 class="section-title">おすすめメニュー</h2>
+
+      <div class="cards">
+        <div class="card menu-card" data-key="pasta1" style="cursor: pointer">
+          <div class="card-img" style="background-image: url('assets/images/pasta1.webp')"></div>
+
+          <h3>王道の完熟トマトパスタ</h3>
+          <p class="card-desc">
+            完熟トマトの爽やかな酸味が心地よい、自家製ソースのパスタです。
+          </p>
+        </div>
+
+        <div class="card menu-card" data-key="pizza3" style="cursor: pointer">
+          <div class="card-img" style="background-image: url('assets/images/pizza3.webp')"></div>
+
+          <h3>生ハムとルッコラのピッツァ</h3>
+          <p class="card-desc">
+            香り豊かな生ハムとルッコラのほろ苦さが調和した、軽やかで上品な一枚です。
+          </p>
+        </div>
+
+        <div class="card menu-card" data-key="dessert3" style="cursor: pointer">
+          <div class="card-img" style="background-image: url('assets/images/dessert3.webp')"></div>
+
+          <h3>ピスタチオジェラート</h3>
+          <p class="card-desc">
+            濃厚なピスタチオの香りが広がる、自家製の人気ジェラートです。
+          </p>
+        </div>
+      </div>
+
+      <a href="menu.html" class="btn">もっと見る</a>
+    </section>
+  </main>
+
+  <section id="access" class="access fade-in">
+    <h2 class="section-title">ACCESS</h2>
+    <div class="map-large">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.004905829444!2d136.90399157543223!3d35.18143027275275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003712dbfa2718f%3A0x6dc8f7587fe509fd!2z5ZCN5Y-k5bGL5biC5b255omA!5e0!3m2!1sja!2sjp!4v1778330808648!5m2!1sja!2sjp&iwloc=0"
+        width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="access-info card-style">
+      <p>・地下鉄名城線「名古屋城」駅から徒歩3分</p>
+      <p>・名鉄瀬戸線「東大手」駅から徒歩5分</p>
+      <p>・基幹バス/市バス「市役所」から徒歩1分</p>
+      <p>・お車：名鉄名古屋駅より東へ約10分(駐車場12台あり)</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2 class="section-title">CONTACT</h2>
+
+    <p class="contact-lead">
+      ご予約・ご質問などございましたら、お気軽にご連絡ください。
+    </p>
+
+    <div class="contact-form">
+      <form action="#" method="post">
+        <label for="name">お名前（必須）</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">メールアドレス（必須）</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">メッセージ（必須）</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="contact-btn">送信する</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="sns-area">
+        <a href="#" class="sns-icon">
+          <img src="./assets/images/icon-instagram.png" alt="Instagram" />
+        </a>
+        <a href="#" class="sns-icon">
+          <img src="./assets/images/icon-x.png" alt="X" />
+        </a>
+        <a href="#" class="sns-icon">
+          <img src="./assets/images/icon-facebook.png" alt="Facebook" />
+        </a>
+        <a href="#" class="sns-icon">
+          <img src="./assets/images/icon-line.png" alt="LINE" />
+        </a>
+      </div>
+
+      <div class="footer-info">
+        <h3 class="footer-logo">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo3.png" alt="Pasta Felice" />
+          </a>
+        </h3>
+
+        <p>〒452-0942 愛知県名古屋市東区〇〇-〇</p>
+        <p><a href="tel:0521234567">Tel: 052-123-4567</a></p>
+        <div class="hours">
+          <p>営業時間: 11:00 - 21:00 (L.O. 20:30)</p>
+          <p>定休日: 月曜日</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="copy">© 2026 Pasta Felice</p>
+  </footer>
+
+  <script>
+    // 1. スライドショーの本体
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let index = 0;
+    let timer;
+    null;
+
+    function showSlide(nextIndex) {
+      // スライドが1枚もない場合は処理しない（エラー防止）
+      if (slides.length === 0) return;
+      const currentActive = document.querySelector('.slide.active');
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide) => slide.classList.remove('last-active'));
+      if (currentActive) {
+        currentActive.classList.remove('active');
+        currentActive.classList.add('last-active');
+      }
+      slides[index].classList.add('active');
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === index);
+      });
+      resetTimer();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        showSlide(index + 1);
+      }, 7200);
+    }
+
+    document
+      .querySelector('.next')
+      .addEventListener('click', () => showSlide(index + 1));
+    document
+      .querySelector('.prev')
+      .addEventListener('click', () => showSlide(index - 1));
+    dots.forEach((dot, i) =>
+      dot.addEventListener('click', () => showSlide(i)),
+    );
+
+    // 2. スプラッシュ画面の制御（ふわっと消える演出）
+    window.addEventListener('load', () => {
+      const splash = document.getElementById('splash');
+      const whiteCover = document.querySelector('.white-cover');
+      const visited = sessionStorage.getItem('felice_visited');
+
+      if (visited) {
+        if (splash) splash.style.display = 'none';
+        if (whiteCover) whiteCover.style.display = 'none';
+        document.body.classList.remove('no-scroll');
+        showSlide(0);
+        return;
+      }
+
+      // 初回訪問時
+      document.body.classList.add('no-scroll');
+      if (splash) splash.style.display = 'flex';
+      if (whiteCover) whiteCover.style.display = 'block';
+
+      setTimeout(() => {
+        // ① ロゴ（スプラッシュ）をフェードアウト
+        splash.classList.add('hide');
+
+        // ★ 初回訪問として記録（次回からスプラッシュを出さない）
+        sessionStorage.setItem('felice_visited', 'true');
+
+        // ② メイン画像が表示されるまで white-cover を残す
+        setTimeout(() => {
+          whiteCover.classList.add('hide');
+        }, 1200);
+
+        // ③ メイン画像を表示し、スクロール解除
+        setTimeout(() => {
+          document.body.classList.remove('no-scroll');
+          showSlide(0);
+
+          const message = document.querySelector('.slide-message');
+          if (message) {
+            message.classList.add('show-anim');
+          }
+        }, 2000);
+      }, 3500);
+    });
+  </script>
+
+  <div id="itemModal" class="item-modal">
+    <div class="item-modal-content">
+      <span class="item-modal-close">×</span>
+
+      <img id="modalImage" class="item-modal-image" />
+
+      <h2 id="modalTitle" class="item-modal-title"></h2>
+
+      <p id="modalPrice" class="item-modal-price"></p>
+
+      <p id="modalDesc" class="item-modal-desc"></p>
+    </div>
+  </div>
+
+  <script>
+    const items = {
+      pasta1: {
+        img: 'assets/images/pasta1.webp',
+        title: 'スパゲッティ・ポモドーロ・クラシコ',
+        price: '¥1,180（税込）',
+        desc: '完熟トマトの甘みと酸味を引き出した定番パスタ。南イタリア・ナポリで“最も愛される基本のパスタ”と呼ばれる一皿です。火を入れることで甘みが増すサンマルツァーノ種のトマトを中心に使い、余計な調味料を加えず、トマト・バジル・オリーブオイルの香りを最大限に生かしています。シンプルだからこそ、丁寧な火入れと素材の質が味を決める、王道の一品です。',
+      },
+
+      // pasta2: {
+      //   img: 'assets/images/pasta2.webp',
+      //   title: 'フェットチーネ・アルフレッド・コン・ポッロ',
+      //   price: '¥1,380（税込）',
+      //   desc: '濃厚なクリームソースにチキンを合わせた、贅沢でまろやかな一皿。ローマの料理人アルフレッド氏が考案したと言われる“アルフレッドソース”を、平打ちのフェットチーネにたっぷり絡むよう、コクのあるクリームで仕上げています。しっとりと焼き上げたチキンがソースのまろやかさを引き立て、一口ごとに満足感のある、リッチな味わいをお楽しみいただけます。',
+      // },
+
+      pizza3: {
+        img: 'assets/images/pizza3.webp',
+        title: 'プロシュート・エ・ルッコラ',
+        price: '¥1,680（税込）',
+        desc: '生ハムの塩気とルッコラの爽やかさが絶妙に調和した大人の味。焼き上げた生地の上に、仕上げで生ハムとルッコラをのせることで、香りと食感が際立ちます。イタリアでは“ワインと合わせるピザ”として親しまれる組み合わせです。',
+      },
+
+      dessert3: {
+        img: 'assets/images/dessert3.webp',
+        title: 'ピスタチオジェラート',
+        price: '¥720（税込）',
+        desc: '濃厚なピスタチオの香りが楽しめる、人気の自家製ジェラート。イタリアではジェラート専門店が多く、ナッツ系フレーバーは特に人気。香ばしさとコクが広がる、満足感の高い一品です。',
+      },
+    };
+
+    const modal = document.getElementById('itemModal');
+
+    function closeModal() {
+      modal.classList.remove('show');
+
+      document.body.classList.remove('no-scroll');
+
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 300);
+    }
+
+    document.querySelectorAll('.menu-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        const key = card.getAttribute('data-key');
+
+        const item = items[key];
+
+        if (!item) return;
+
+        document.getElementById('modalImage').src = item.img;
+
+        document.getElementById('modalTitle').textContent = item.title;
+
+        document.getElementById('modalPrice').textContent = item.price;
+
+        document.getElementById('modalDesc').textContent = item.desc;
+
+        modal.style.display = 'flex';
+
+        document.body.classList.add('no-scroll');
+
+        setTimeout(() => {
+          modal.classList.add('show');
+        }, 10);
+      });
+    });
+
+    document.querySelector('.item-modal-close').onclick = closeModal;
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+  <script>
+    const fadeTargets = document.querySelectorAll('.fade-in');
+
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navClose = document.querySelector('.nav-close');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      {
+        threshold: 0, // ← ★ここを 0 にする
+      },
+    );
+
+    fadeTargets.forEach((target) => observer.observe(target));
+
+    // × ボタンで閉じる
+    navClose.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      hamburger.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    });
+
+    // ★ 黒い幕（オーバーレイ）を取得
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    // ★ ハンバーガーを押したらナビと黒幕を表示
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+      hamburger.classList.toggle('active');
+
+      if (navMenu.classList.contains('show')) {
+        navOverlay.classList.add('show'); // ← 黒幕 ON
+        document.body.classList.add('no-scroll');
+      } else {
+        navOverlay.classList.remove('show'); // ← 黒幕 OFF
+        document.body.classList.remove('no-scroll');
+      }
+    });
+
+    // ★ × ボタンで閉じる
+    navClose.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      hamburger.classList.remove('active');
+      navOverlay.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+    });
+
+    // ★ 黒幕をタッチしたら閉じる
+    navOverlay.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      hamburger.classList.remove('active');
+      navOverlay.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+    });
+
+    // ★ メニュー内のリンクを押したら閉じる（← これを追加）
+    document.querySelectorAll('.nav-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        hamburger.classList.remove('active');
+        navOverlay.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+  </script>
+  <!-- ▼ NEWS用モーダル（NEWSをクリックしたときに開く） -->
+  <div id="newsModal" class="news-modal">
+    <div class="news-modal-content">
+      <span class="item-modal-close">×</span>
+
+      <h2 id="newsModalTitle" class="news-modal-title"></h2>
+
+      <p class="news-modal-meta">
+        <span id="newsModalDate" class="news-modal-date"></span>
+        <span id="newsModalCategory" class="news-modal-category"></span>
+      </p>
+
+      <p id="newsModalDetail" class="news-modal-detail"></p>
+    </div>
+  </div>
+  <script>
+    const NEWS_VISIBLE_COUNT = 5;
+
+    const newsListEl = document.getElementById('news-list');
+
+    const newsModal = document.getElementById('newsModal');
+    const newsModalTitle = document.getElementById('newsModalTitle');
+    const newsModalDate = document.getElementById('newsModalDate');
+    const newsModalCategory = document.getElementById('newsModalCategory');
+    const newsModalDetail = document.getElementById('newsModalDetail');
+    const newsModalClose = newsModal.querySelector('.item-modal-close');
+
+    let allNews = [];
+
+    function isNew(dateStr) {
+      const today = new Date();
+      const newsDate = new Date(dateStr);
+      const diffMs = today - newsDate;
+      const diffDays = diffMs / (1000 * 60 * 60 * 24);
+      return diffDays <= 7;
+    }
+
+    function renderNews() {
+      newsListEl.innerHTML = '';
+
+      // ★ 常に最新5件だけ表示
+      const slice = allNews.slice(0, NEWS_VISIBLE_COUNT);
+
+      slice.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.dataset.index = index;
+
+        // ▼ 日付
+        const dateEl = document.createElement('span');
+        dateEl.className = 'news-date';
+        dateEl.textContent = item.date.replace(/-/g, '.');
+
+        // ▼ カテゴリ（★追加）
+        const categoryEl = document.createElement('span');
+        categoryEl.className = 'news-category';
+        categoryEl.textContent = `【${item.category}】`;
+
+        // ▼ タイトル
+        const titleEl = document.createElement('span');
+        titleEl.className = 'news-title';
+        titleEl.textContent = item.title;
+
+        if (isNew(item.date)) {
+          const newEl = document.createElement('span');
+          newEl.className = 'news-new';
+          newEl.textContent = 'NEW';
+          titleEl.appendChild(newEl);
+        }
+
+        // ▼ 追加する順番（ここが重要）
+        div.appendChild(dateEl);
+        div.appendChild(categoryEl); // ← ★ここに入れる
+        div.appendChild(titleEl);
+
+        div.addEventListener('click', () => {
+          newsModalTitle.textContent = item.title;
+          newsModalDate.textContent = item.date.replace(/-/g, '.');
+          newsModalCategory.textContent = `【${item.category}】`;
+          newsModalDetail.innerHTML = item.detail;
+
+          newsModal.classList.add('show');
+          document.body.classList.add('no-scroll');
+        });
+
+        newsListEl.appendChild(div);
+      });
+    }
+
+    fetch('assets/data/news.json')
+      .then((res) => res.json())
+      .then((data) => {
+        allNews = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        renderNews();
+      })
+      .catch((err) => {
+        console.error('NEWSの読み込みに失敗しました', err);
+      });
+
+    function closeNewsModal() {
+      newsModal.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+    }
+
+    newsModalClose.addEventListener('click', closeNewsModal);
+    newsModal.addEventListener('click', (e) => {
+      if (e.target === newsModal) closeNewsModal();
+    });
+  </script>
+</body>
+
+</html>
