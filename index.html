@@ -585,6 +585,9 @@
       })
       .catch((err) => {
         console.error('NEWSの読み込みに失敗しました', err);
+      })
+      .finally(()=>{
+
       });
 
     function closeNewsModal() {
